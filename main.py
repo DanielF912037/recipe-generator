@@ -22,6 +22,8 @@ cuisines = [
     "Italian", "Mexican", "Chinese", "Indian", "Greek", "Thai"
 ]
 
+# Define difficulty levels
+difficulty_levels = ["Easy", "Medium", "Difficult"]
 
 def generate_recipe(preferred_ingredients=[], excluded_ingredients=[]):
     # Filter ingredients based on user preferences
@@ -34,8 +36,10 @@ def generate_recipe(preferred_ingredients=[], excluded_ingredients=[]):
     main_ingredient = random.choice(available_ingredients)
     side_ingredient = random.choice(available_ingredients)
     cuisine = random.choice(cuisines)
+    difficulty = random.choice(difficulty_levels)
 
     recipe = f"Recipe: {cuisine} {main_ingredient} with {side_ingredient}\n"
+    recipe += f"Difficulty Level: {difficulty}\n"
     return recipe
 
 
