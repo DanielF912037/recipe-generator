@@ -18,26 +18,31 @@ ingredients = [
     "Lemon Juice", "Honey", "Coconut Milk"
 ]
 
-cuisines = [
+cuisines = [  # List of cuisines
     "Italian", "Mexican", "Chinese", "Indian", "Greek", "Thai"
 ]
 
 # Define difficulty levels
 difficulty_levels = ["Easy", "Medium", "Difficult"]
 
+
 def generate_recipe(preferred_ingredients=[], excluded_ingredients=[]):
+
     # Filter ingredients based on user preferences
     available_ingredients = [ingredient for ingredient in ingredients if
-                             ingredient not in excluded_ingredients and (not preferred_ingredients or ingredient in preferred_ingredients)]
+                             ingredient not in excluded_ingredients and (
+                                         not preferred_ingredients or ingredient in preferred_ingredients)]
 
     if not available_ingredients:
         return "No recipes match your preferences. Try different ingredients."
 
+    # Randomly select main ingredient, side ingredient, cuisine, and difficulty level
     main_ingredient = random.choice(available_ingredients)
     side_ingredient = random.choice(available_ingredients)
     cuisine = random.choice(cuisines)
     difficulty = random.choice(difficulty_levels)
 
+    # Create a recipe string
     recipe = f"Recipe: {cuisine} {main_ingredient} with {side_ingredient}\n"
     recipe += f"Difficulty Level: {difficulty}\n"
     return recipe
@@ -50,9 +55,12 @@ if __name__ == "__main__":
         input("Press Enter to generate a recipe...")
 
         # Allow users to specify preferred and excluded ingredients
-        preferred_ingredients = input("Enter preferred ingredients (comma-separated, or press Enter to skip): ").split(',')
-        excluded_ingredients = input("Enter excluded ingredients (comma-separated, or press Enter to skip): ").split(',')
+        preferred_ingredients = input("Enter preferred ingredients (comma-separated, or press Enter to skip): ").split(
+            ',')
+        excluded_ingredients = input("Enter excluded ingredients (comma-separated, or press Enter to skip): ").split(
+            ',')
 
+        # Generate a recipe based on user preferences
         recipe = generate_recipe(preferred_ingredients, excluded_ingredients)
 
         # Format and display the output
@@ -62,6 +70,7 @@ if __name__ == "__main__":
         print(recipe)
         print("\n" + "-" * 50)  # Add a separator line
 
+        # Ask if the user wants to generate another recipe
         again = input("\nGenerate another recipe? (yes/y or no/n): ")
         if again.lower() not in ["yes", "y"]:
             break
