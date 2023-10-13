@@ -21,13 +21,7 @@ You can choose to generate another recipe or exit the program by typing "no" or 
 ## Contributing
 Contributions to this project are welcome! If you'd like to contribute, please follow these guidelines:
 
-Fork the repository on GitHub.
-Create a new branch with a descriptive name: git checkout -b feature/your-feature-name.
-Make your changes and test them.
-Commit your changes: git commit -m "Add your descriptive commit message".
-Push your changes to your forked repository: git push origin feature/your-feature-name.
-Create a pull request on the original repository.
-Please ensure your code follows PEP 8 style guidelines, and provide a clear description of your changes in the pull request.
+
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
